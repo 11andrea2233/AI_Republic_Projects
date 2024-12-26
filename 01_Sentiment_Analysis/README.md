@@ -1,34 +1,34 @@
-Sentiment Analysis App
+**Sentiment Analysis App**
 
-This is a Sentiment Analysis Application built using Streamlit. The app allows users to analyze the sentiment of text using two different methods:
+This is a **Sentiment Analysis Application** built using **Streamlit**. The app allows users to analyze the sentiment of text using two different methods:
 
-HuggingFace Transformers: A pre-trained model for sentiment analysis.
+**HuggingFace Transformers:** A pre-trained model for sentiment analysis.
 
-spaCy with TextBlob: A lightweight, rule-based sentiment analysis.
+**spaCy with TextBlob:** A lightweight, rule-based sentiment analysis.
 
 The app also provides functionality to analyze sentiment for entire datasets via file uploads.
 
-Features
+**Features**
 
-1. Single Text Sentiment Analysis
+**1. Single Text Sentiment Analysis**
 
 Users can input text manually to analyze its sentiment using:
 
-HuggingFace Transformer Models.
+**HuggingFace Transformer Models.
 
-spaCy with TextBlob.
+spaCy with TextBlob.**
 
 The sentiment is categorized as:
 
-Positive
+**Positive
 
 Negative
 
 Neutral
-
+**
 Results are displayed with background colors for quick visual feedback.
 
-2. Dataset Sentiment Analysis
+**2. Dataset Sentiment Analysis**
 
 Upload a CSV file with a text column.
 
