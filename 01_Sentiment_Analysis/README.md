@@ -15,9 +15,11 @@ The app also provides functionality to analyze sentiment for entire datasets via
 Users can input text manually to analyze its sentiment using:
 
 **HuggingFace Transformer Models.**
+
 **spaCy with TextBlob.**
 
 The sentiment is categorized as:
+
 **Positive**
 
 **Negative**
