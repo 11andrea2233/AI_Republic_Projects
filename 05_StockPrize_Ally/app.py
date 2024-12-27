@@ -253,7 +253,26 @@ elif options == "StockPrize AI":
             high_price_column = st.selectbox("Select high price column:", data.columns)
             low_price_column = st.selectbox("Select low price column:", data.columns)
             volume_column = st.selectbox("Select volum column:", data.columns)
-            stock_price_column = data[closing_price_column, opening_price_column, high_price_column, low_price_column, volume_column]
+            
+            # Handling the column selections and checking their existence in the DataFrame
+            try:
+                column_names = [closing_price_column, opening_price_column, high_price_column, low_price_column, volume_column]
+                if all(col in data.columns for col in column_names):
+                    stock_price_columns = data[column_names]
+                else:
+                    st.error("One or more columns do not exist in the DataFrame")
+                    stock_price_columns = pd.DataFrame()  # Empty DataFrame as a fallback
+            except Exception as e:
+                st.error(f"Failed to retrieve data columns: {str(e)}")
+                stock_price_columns = pd.DataFrame()  # Empty DataFrame as a fallback
+
+            # Proceed with using `stock_price_columns` for further processing
+            if not stock_price_columns.empty:
+                # You can now use `stock_price_columns` to perform operations, forecasting, etc.
+                st.write("Selected Stock Data:", stock_price_columns.head())
+            else:
+                st.warning("No data to display. Please check your column selections.")
+    
     else:
         # Manual data entry
         st.write("Enter your stock prices data below:")
