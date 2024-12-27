@@ -38,4 +38,4 @@ Analyze sentiment for each row in the dataset.
 
 Download the results as a CSV file containing the text, sentiment, and confidence/polarity score.
 
-**Live App:** https://airepublicprojects-fce46gusklxt4csar9bxii.streamlit.app/
+**Live App:** https://asentimentanalysis.streamlit.app/
