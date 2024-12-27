@@ -113,11 +113,14 @@ if 'messages' not in st.session_state:
 
 
 # Function to forecast stockprice
-def forecast_stock_price(data, column):
+def forecast_stock_price(data, columns):
     # Prepare the input for the GPT model
     
-    stock_price_data = data[column].tolist()
-    stock_price_data_str = ', '.join(map(str, stock_price_data))
+    if isinstance(columns, list) and all(col in data.columns for col in columns):
+        # Convert selected column data into a single string per row, then join all rows
+        stock_price_data_str = ', '.join(data[columns].astype(str).apply(lambda row: ' '.join(row.values), axis=1))
+    else:
+        raise ValueError("Columns provided are not correctly specified or do not exist in the DataFrame")
    
     # RAG Implementation
     # Load and prepare data for RAG
