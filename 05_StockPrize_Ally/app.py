@@ -116,15 +116,17 @@ if 'messages' not in st.session_state:
 logging.basicConfig(level=logging.INFO)
 
 def get_embedding(document, engine="text-embedding-3-small"):
-    logging.info(f"Retrieving embedding for document: {document[:30]}...")  # Log the beginning of a document to identify calls
     try:
         response = openai.Embedding.create(
             input=document,
             model=engine
         )
         return response['data']['embedding']
-    except openai.error.OpenAIError as e:
-        logging.error(f"Failed to retrieve embedding: {e}")
+    except openai.error.ApiError as e:  # Using the correct exception class
+        if e.error_type == 'insufficient_quota':
+            print("Quota exceeded: Please check your OpenAI API quota.")
+        else:
+            print(f"API error: {e}")
         return None
 
 
