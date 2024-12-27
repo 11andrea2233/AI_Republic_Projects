@@ -35,7 +35,7 @@ with st.sidebar :
 
     options = option_menu(
         "Dashboard", 
-        ["Home", "About Us", "Model"],
+        ["Home", "About Me", "Model"],
         icons = ['book', 'globe', 'tools'],
         menu_icon = "book", 
         default_index = 0,
@@ -54,12 +54,27 @@ if 'chat_session' not in st.session_state:
     st.session_state.chat_session = None
 
 if options == "Home":
-    st.title("Title")
-    st.write("Write Text")
+    st.title("News Summarizer Tool")
+    st.write("Purpose")
+    st.write("The News Summarizer Tool is designed to provide automated, concise, and neutral summaries of news articles. Leveraging OpenAI's advanced language models, this application helps users quickly grasp the main points of extensive news content without the need for manual reading. It aims to enhance productivity and understanding by distilling complex information into digestible summaries.")
+    st.write("##Who is it for?")
+    st.write("This tool is ideal for:")
+    st.write("**-Journalists and Editors:** Streamline the process of researching and reporting by quickly obtaining summaries of relevant news articles.")
+    st.write("**-Researchers and Academics: ** Easily gather summaries of the latest news in your field without sifting through multiple sources.")
+    st.write("**-General Public:** Stay informed with quick updates on world events, reducing the time spent reading multiple articles.")
+    
 
-elif options == "About Us":
-    #st.image("")   <<put the url for an image
-    st.title("About Us")
+elif options == "About Me":
+    st.header("About Me")
+    st.markdown("""
+         Hi! I'm Andrea Sombilon! I am a business intelligence specialist and data analyst with a strong foundation in deriving insights from data to drive strategic decisions. Currently, I am expanding my skill set by learning to create products in Artificial Intelligence and working towards becoming an AI Engineer. My goal is to leverage my expertise in BI and data analysis with advanced AI techniques to create innovative solutions that enhance business intelligence and decision-making capabilities. 
+        
+        This projects is one of the projects I am building to try and apply the learning I have acquired from the AI First Bootcamp of AI Republic.
+        
+        Any feedback would be greatly appreciated! ❤
+        """)
+        
+    st.text("Connect with me on LinkedIn 😊 [Andrea Arana](https://www.linkedin.com/in/andrea-a-732769168/)")
 
 elif options == "Model":
     st.title('News Summarizer Tool')
