@@ -12,6 +12,7 @@ from streamlit_folium import st_folium
 from folium import plugins
 from folium.plugins import MarkerCluster
 import matplotlib.pyplot as plt
+import logging
 
 warnings.filterwarnings("ignore")
 
@@ -112,18 +113,18 @@ if 'messages' not in st.session_state:
     st.session_state.messages = []
 
 # Define the get_embedding function
+logging.basicConfig(level=logging.INFO)
+
 def get_embedding(document, engine="text-embedding-3-small"):
+    logging.info(f"Retrieving embedding for document: {document[:30]}...")  # Log the beginning of a document to identify calls
     try:
         response = openai.Embedding.create(
             input=document,
             model=engine
         )
         return response['data']['embedding']
-    except openai.Error as e:
-        if e.code == 'insufficient_quota':
-            print("API quota exceeded. Please check your OpenAI account limits.")
-        else:
-            print(f"An error occurred: {e}")
+    except openai.error.OpenAIError as e:
+        logging.error(f"Failed to retrieve embedding: {e}")
         return None
 
 
