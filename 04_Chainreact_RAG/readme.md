@@ -45,4 +45,4 @@ The dataset covers a limited selection of routes and transportation modes, which
 
 Contributions to expand the dataset or enhance analysis techniques are welcome. Please submit pull requests or issues to discuss potential changes or additions.
 
-Try the live sample: 
+Try the live sample: https://chainreact-rag.streamlit.app/
