@@ -1,0 +1,21 @@
+﻿Shipment_ID,Mode_of_Transport,Origin,Destination,Transit_Time (days),Cost
+T001,Truck,"Chicago, IL","Milwaukee, WI",1,$150 
+T002,Rail,"LA, CA","Houston, TX",3,$500 
+T003,Air,"Miami, FL","Seattle, WA",2,$850 
+T004,Sea,"NYC, NY","London, UK",10,"$1,800 "
+T005,Truck,"Atlanta, GA","Nashville, TN",1,$200 
+T006,Truck,"Dallas, TX","Austin, TX",1,$180 
+T007,Rail,"Chicago, IL","Detroit, MI",3,$450 
+T008,Air,"Miami, FL","Houston, TX",2,$800 
+T009,Sea,"LA, CA","Tokyo, Japan",14,"$2,000 "
+T010,Truck,"Atlanta, GA","Orlando, FL",1,$180 
+T011,Rail,"Seattle, WA","Chicago, IL",4,$550 
+T012,Truck,"Dallas, TX","Phoenix, AZ",2,$250 
+T013,Sea,"San Diego, CA","Sydney, Australia",18,"$2,500 "
+T014,Truck,"Chicago, IL","Cleveland, OH",1,$175 
+T015,Rail,"Denver, CO","Salt Lake City, UT",3,$400 
+T016,Air,"NYC, NY","Miami, FL",1,$600 
+T017,Sea,"Seattle, WA","Vancouver, Canada",7,"$1,200 "
+T018,Truck,"Boston, MA","NYC, NY",1,$150 
+T019,Rail,"Houston, TX","Dallas, TX",1,$350 
+T020,Air,"Chicago, IL","San Francisco, CA",2,$900 
