@@ -309,9 +309,9 @@ elif options == "StockPrize AI":
             st.warning("Please fill out all fields to proceed.")
 
 
-    if 'data' in locals() and 'stock_price_column' in locals():
+    if 'data' in locals() and 'stock_price_columns' in locals():
         if st.button("Forecast Stock Prices"):
-            forecast, prompt = forecast_stock_price(data, stock_price_column)
+            forecast, prompt = forecast_stock_price(data, stock_price_columns)
             if forecast is not None:    
                 st.write("Forecasted Stock Prices:", forecast)
 
