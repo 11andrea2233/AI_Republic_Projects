@@ -111,6 +111,18 @@ with st.sidebar:
 if 'messages' not in st.session_state:
     st.session_state.messages = []
 
+# Define the get_embedding function
+def get_embedding(document, engine="text-embedding-3-small"):
+    try:
+        response = openai.Embedding.create(
+            input=document,
+            model=engine
+        )
+        return response['data']['embedding']
+    except Exception as e:
+        print(f"Error retrieving embedding: {e}")
+        return None  # Handle the exception or return a default value
+
 
 # Function to forecast stockprice
 def forecast_stock_price(data, columns):
@@ -255,7 +267,7 @@ elif options == "StockPrize AI":
             opening_price_column = st.selectbox("Select opening price column:", data.columns)
             high_price_column = st.selectbox("Select high price column:", data.columns)
             low_price_column = st.selectbox("Select low price column:", data.columns)
-            volume_column = st.selectbox("Select volum column:", data.columns)
+            volume_column = st.selectbox("Select volume column:", data.columns)
             
             # Handling the column selections and checking their existence in the DataFrame
             column_names = [closing_price_column, opening_price_column, high_price_column, low_price_column, volume_column]
