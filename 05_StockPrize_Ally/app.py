@@ -253,7 +253,7 @@ elif options == "StockPrize AI":
             high_price_column = st.selectbox("Select high price column:", data.columns)
             low_price_column = st.selectbox("Select low price column:", data.columns)
             volume_column = st.selectbox("Select volum column:", data.columns)
-            stock_price_column = data[[closing_price_column, opening_price_column, high_price_column, low_price_column, volume_column]]
+            stock_price_column = data[closing_price_column, opening_price_column, high_price_column, low_price_column, volume_column]
     else:
         # Manual data entry
         st.write("Enter your stock prices data below:")
