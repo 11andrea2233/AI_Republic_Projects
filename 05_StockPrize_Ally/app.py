@@ -119,9 +119,12 @@ def get_embedding(document, engine="text-embedding-3-small"):
             model=engine
         )
         return response['data']['embedding']
-    except Exception as e:
-        print(f"Error retrieving embedding: {e}")
-        return None  # Handle the exception or return a default value
+    except openai.Error as e:
+        if e.code == 'insufficient_quota':
+            print("API quota exceeded. Please check your OpenAI account limits.")
+        else:
+            print(f"An error occurred: {e}")
+        return None
 
 
 # Function to forecast stockprice
