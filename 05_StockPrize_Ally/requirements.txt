@@ -10,3 +10,4 @@ langchain_community
 scipy
 scikit-learn
 newspaper3k==0.2.8
+folium
