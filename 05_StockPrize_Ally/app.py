@@ -115,6 +115,7 @@ if 'messages' not in st.session_state:
 # Define the get_embedding function
 logging.basicConfig(level=logging.INFO)
 
+
 def get_embedding(document, engine="text-embedding-3-small"):
     logging.info(f"Retrieving embedding for document: {document[:30]}...")  # Log the beginning of a document to identify calls
     try:
@@ -124,10 +125,7 @@ def get_embedding(document, engine="text-embedding-3-small"):
         )
         return response['data']['embedding']
     except openai.error.OpenAIError as e:
-        if e.error_type == 'insufficient_quota':
-            print("Quota exceeded: Please check your OpenAI API quota.")
-        else:
-            print(f"API error: {e}")
+        logging.error(f"Failed to retrieve embedding: {e}")
         return None
 
 
@@ -329,6 +327,11 @@ elif options == "StockPrize AI":
 
     if 'data' in locals() and 'stock_price_columns' in locals():
         if st.button("Forecast Stock Prices"):
+
+
+
+
+
             forecast, prompt = forecast_stock_price(data, stock_price_columns)
             if forecast is not None:    
                 st.write("Forecasted Stock Prices:", forecast)
