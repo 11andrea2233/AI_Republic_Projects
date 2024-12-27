@@ -258,23 +258,19 @@ elif options == "StockPrize AI":
             volume_column = st.selectbox("Select volum column:", data.columns)
             
             # Handling the column selections and checking their existence in the DataFrame
-            try:
-                column_names = [closing_price_column, opening_price_column, high_price_column, low_price_column, volume_column]
-                if all(col in data.columns for col in column_names):
-                    stock_price_columns = data[column_names]
-                else:
-                    st.error("One or more columns do not exist in the DataFrame")
-                    stock_price_columns = pd.DataFrame()  # Empty DataFrame as a fallback
-            except Exception as e:
-                st.error(f"Failed to retrieve data columns: {str(e)}")
-                stock_price_columns = pd.DataFrame()  # Empty DataFrame as a fallback
+            column_names = [closing_price_column, opening_price_column, high_price_column, low_price_column, volume_column]
 
-            # Proceed with using `stock_price_columns` for further processing
-            if not stock_price_columns.empty:
-                # You can now use `stock_price_columns` to perform operations, forecasting, etc.
-                st.write("Selected Stock Data:", stock_price_columns.head())
+            # Ensure all selected columns exist in the DataFrame
+            if all(col in data.columns for col in column_names):
+                # Button to trigger forecasting
+                if st.button("Forecast Stock Prices"):
+                    forecast, context = forecast_stock_price(data, column_names)
+                    st.write("Forecasted Stock Prices:", forecast)
+
+                    explanation = generate_explanation(data, forecast)  # Assuming this function is defined to use data and forecast
+                    st.write("Explanation:", explanation)
             else:
-                st.warning("No data to display. Please check your column selections.")
+                st.error("One or more selected columns do not exist in the uploaded data. Please check your selections.")
     
     else:
         # Manual data entry
