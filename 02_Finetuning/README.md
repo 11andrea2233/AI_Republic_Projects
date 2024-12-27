@@ -1,6 +1,5 @@
-##Fine-tuning Gemma-2-2b instruct for AI Medical Q&A
+**Fine-tuning Gemma-2-2b instruct for AI Medical Q&A**
 
-Markdown
 
 **Purpose**
 
