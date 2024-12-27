@@ -60,7 +60,7 @@ if options == "Home":
     st.write("##Who is it for?")
     st.write("This tool is ideal for:")
     st.write("**-Journalists and Editors:** Streamline the process of researching and reporting by quickly obtaining summaries of relevant news articles.")
-    st.write("**-Researchers and Academics: ** Easily gather summaries of the latest news in your field without sifting through multiple sources.")
+    st.write("**-Researchers and Academics:** Easily gather summaries of the latest news in your field without sifting through multiple sources.")
     st.write("**-General Public:** Stay informed with quick updates on world events, reducing the time spent reading multiple articles.")
     
 
