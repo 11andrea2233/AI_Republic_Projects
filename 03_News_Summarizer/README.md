@@ -34,4 +34,4 @@ To use the News Summarizer Tool, follow these steps:
 
 The News Summarizer Tool is designed to be user-friendly, requiring minimal technical knowledge to operate, making it accessible to a broad audience interested in efficient information processing.
 
-Try it out live here: https://ai-news-summarizer.streamlit.app/
+Try it out live here: https://news-summarizer-ai.streamlit.app/
