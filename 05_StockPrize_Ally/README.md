@@ -63,7 +63,7 @@ Before you begin, ensure you have the following installed:
 
 Clone the repository using:
 
-    git clone https://github.com/11andrea2233/StockPrize-Ally.git
+    git clone [https://github.com/11andrea2233/StockPrize-Ally.git](https://github.com/11andrea2233/AI_Republic_Projects/tree/main/05_StockPrize_Ally)
 
 Navigate into the project directory:
 
